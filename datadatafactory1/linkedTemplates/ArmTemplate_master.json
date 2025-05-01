@@ -7,6 +7,38 @@
 			"metadata": "Data Factory name",
 			"defaultValue": "datadatafactory1"
 		},
+		"Advworksdb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Advworksdb'"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"Advworksdb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "enterservername.database.windows.net"
+		},
+		"Advworksdb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "enterdatabasename"
+		},
+		"Advworksdb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "enterservername.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "enterdatabasename_2025-04-28T07-07Z"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
+		},
 		"containerUri": {
 			"type": "string",
 			"metadata": "URI to storage account containing linked ARM templates"
@@ -33,6 +65,30 @@
 				"parameters": {
 					"factoryName": {
 						"value": "[parameters('factoryName')]"
+					},
+					"Advworksdb_password": {
+						"value": "[parameters('Advworksdb_password')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"Advworksdb_properties_typeProperties_server": {
+						"value": "[parameters('Advworksdb_properties_typeProperties_server')]"
+					},
+					"Advworksdb_properties_typeProperties_database": {
+						"value": "[parameters('Advworksdb_properties_typeProperties_database')]"
+					},
+					"Advworksdb_properties_typeProperties_userName": {
+						"value": "[parameters('Advworksdb_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
 					}
 				}
 			},

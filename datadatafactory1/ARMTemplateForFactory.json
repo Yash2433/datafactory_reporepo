@@ -6,6 +6,38 @@
 			"type": "string",
 			"metadata": "Data Factory name",
 			"defaultValue": "datadatafactory1"
+		},
+		"Advworksdb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Advworksdb'"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"Advworksdb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "enterservername.database.windows.net"
+		},
+		"Advworksdb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "enterdatabasename"
+		},
+		"Advworksdb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "enterservername.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "enterdatabasename_2025-04-28T07-07Z"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
 		}
 	},
 	"variables": {
@@ -24,14 +56,68 @@
 						"dependsOn": [],
 						"userProperties": [],
 						"typeProperties": {
-							"waitTimeInSeconds": 1
+							"waitTimeInSeconds": {
+								"value": "@pipeline().parameters.SecondsWait",
+								"type": "Expression"
+							}
 						}
 					}
 				],
+				"concurrency": 1,
 				"policy": {
 					"elapsedTimeMetric": {}
 				},
+				"parameters": {
+					"SecondsWait": {
+						"type": "int",
+						"defaultValue": 2
+					}
+				},
 				"annotations": []
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/Advworksdb')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('Advworksdb_properties_typeProperties_server')]",
+					"database": "[parameters('Advworksdb_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('Advworksdb_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('Advworksdb_password')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/AzureSqlDatabase1')]",
+			"type": "Microsoft.DataFactory/factories/linkedServices",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"annotations": [],
+				"type": "AzureSqlDatabase",
+				"typeProperties": {
+					"server": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]",
+					"database": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]",
+					"encrypt": "mandatory",
+					"trustServerCertificate": false,
+					"authenticationType": "SQL",
+					"userName": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]",
+					"password": {
+						"type": "SecureString",
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					}
+				}
 			},
 			"dependsOn": []
 		}

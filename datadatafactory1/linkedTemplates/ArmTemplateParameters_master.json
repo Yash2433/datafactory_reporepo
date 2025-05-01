@@ -5,6 +5,30 @@
 		"factoryName": {
 			"value": "datadatafactory1"
 		},
+		"Advworksdb_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"Advworksdb_properties_typeProperties_server": {
+			"value": "enterservername.database.windows.net"
+		},
+		"Advworksdb_properties_typeProperties_database": {
+			"value": "enterdatabasename"
+		},
+		"Advworksdb_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "enterservername.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "enterdatabasename_2025-04-28T07-07Z"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
 		"containerUri": {
 			"value": ""
 		},
