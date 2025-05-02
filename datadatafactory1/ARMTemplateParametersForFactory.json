@@ -8,10 +8,31 @@
 		"Advworksdb_password": {
 			"value": ""
 		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
 		"AzureSqlDatabase1_password": {
 			"value": ""
 		},
 		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase3_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase4_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase5_password": {
 			"value": ""
 		},
 		"ProductBlob_connectionString": {
@@ -25,6 +46,9 @@
 		},
 		"Advworksdb_properties_typeProperties_userName": {
 			"value": "Yash"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsdfpipeline.dfs.core.windows.net/"
 		},
 		"AzureSqlDatabase1_properties_typeProperties_server": {
 			"value": "enterservername.database.windows.net"
@@ -42,6 +66,33 @@
 			"value": "enterdatabasename"
 		},
 		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_server": {
+			"value": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_database": {
+			"value": "taxi-data3"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_server": {
+			"value": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_database": {
+			"value": "taxi-data3"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_server": {
+			"value": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_database": {
+			"value": "taxi-data3"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_userName": {
 			"value": "Yash"
 		}
 	}
