@@ -1,0 +1,44 @@
+{
+	"name": "tripdata",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage2",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "taxi-data.bacpac",
+				"container": "backup"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000�uYO\"��>�\u0003\u0000\u0000J9\u0000\u0000\t\u0000\u001c\u0000model.xml �\u0018\u0000(�\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�Qo�H\u0010ǟs�}\u0007���SEZ�$THIK1�t�\"k�\u0007Xe���)���",
+				"type": "String"
+			},
+			{
+				"name": "\u0006�\u0010�6R*]���\u0004��gf�7�",
+				"type": "String"
+			},
+			{
+				"name": "Prop_2",
+				"type": "String"
+			},
+			{
+				"name": "�>�r\u001e",
+				"type": "String"
+			},
+			{
+				"name": "Qi&�i�i��\u0000E*3&�aif�\u0013~x��\u001f�s0\u0010�\u000b��Jfȃ\u0001�8�*\u0007s}/�A5���m�",
+				"type": "String"
+			}
+		]
+	}
+}
