@@ -6,7 +6,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "tripdatacsv1",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					},
 					"name": "Tripdatacsv"
@@ -19,21 +19,36 @@
 					"name": "tripfairtable"
 				}
 			],
-			"sinks": [],
-			"transformations": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "DelimitedText2",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "join1"
+				},
+				{
+					"name": "aggregate1"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          medallion as string,",
 				"          hack_license as string,",
 				"          vendor_id as string,",
-				"          pickup_datetime as timestamp,",
+				"          pickup_datetime as string,",
 				"          payment_type as string,",
-				"          fare_amount as double,",
-				"          surcharge as boolean,",
-				"          mta_tax as double,",
-				"          tip_amount as double,",
-				"          tolls_amount as double,",
-				"          total_amount as double",
+				"          fare_amount as string,",
+				"          surcharge as string,",
+				"          mta_tax as string,",
+				"          tip_amount as string,",
+				"          tolls_amount as string,",
+				"          total_amount as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -54,7 +69,35 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     isolationLevel: 'READ_UNCOMMITTED',",
-				"     format: 'table') ~> tripfairtable"
+				"     format: 'table') ~> tripfairtable",
+				"Tripdatacsv, tripfairtable join(Tripdatacsv@medallion == tripfairtable@medallion",
+				"     && Tripdatacsv@hack_license == tripfairtable@hack_license",
+				"     && Tripdatacsv@vendor_id == tripfairtable@vendor_id",
+				"     && Tripdatacsv@pickup_datetime == tripfairtable@pickup_datetime,",
+				"     joinType:'inner',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1",
+				"join1 aggregate(groupBy(tripfairtable@payment_type),",
+				"     {Average fair } = avg(toInteger(Tripdatacsv@total_amount)),",
+				"          {Total trip distance} = sum(toInteger(Tripdatacsv@fare_amount))) ~> aggregate1",
+				"aggregate1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          medallion as string,",
+				"          hack_license as string,",
+				"          vendor_id as string,",
+				"          pickup_datetime as string,",
+				"          payment_type as string,",
+				"          fare_amount as string,",
+				"          surcharge as string,",
+				"          mta_tax as string,",
+				"          tip_amount as string,",
+				"          tolls_amount as string,",
+				"          total_amount as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
