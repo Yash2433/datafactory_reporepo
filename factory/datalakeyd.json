@@ -1,0 +1,9 @@
+{
+	"name": "datalakeyd",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "829c3269-3ee6-4e87-a4a0-d8b4c8fd32c1",
+		"tenantId": "6a5b0522-e692-4ea4-bf22-fb80390cbdc3"
+	}
+}
