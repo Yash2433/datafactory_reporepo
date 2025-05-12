@@ -1,0 +1,9 @@
+{
+	"name": "dfyash2433mad",
+	"location": "eastus2",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "608449d3-258a-486a-a089-de43dabeb825",
+		"tenantId": "6a5b0522-e692-4ea4-bf22-fb80390cbdc3"
+	}
+}
