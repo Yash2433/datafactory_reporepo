@@ -1,0 +1,120 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dfyash2433mad"
+		},
+		"Advworksdb_password": {
+			"value": ""
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage2_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage3_connectionString": {
+			"value": ""
+		},
+		"AzureBlobStorage4_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureSqlDatabase1_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase2_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase3_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase4_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase5_password": {
+			"value": ""
+		},
+		"AzureSqlDatabase6_password": {
+			"value": ""
+		},
+		"ProductBlob_connectionString": {
+			"value": ""
+		},
+		"Advworksdb_properties_typeProperties_server": {
+			"value": "enterservername.database.windows.net"
+		},
+		"Advworksdb_properties_typeProperties_database": {
+			"value": "enterdatabasename"
+		},
+		"Advworksdb_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://adlsdfpipeline.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"value": "enterservername.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"value": "enterdatabasename_2025-04-28T07-07Z"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"value": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"value": "enterdatabasename"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_server": {
+			"value": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_database": {
+			"value": "taxi-data3"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_server": {
+			"value": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_database": {
+			"value": "taxi-data3"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_server": {
+			"value": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_database": {
+			"value": "taxi-data3"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"AzureSqlDatabase6_properties_typeProperties_server": {
+			"value": "azzsqlserver.database.windows.net"
+		},
+		"AzureSqlDatabase6_properties_typeProperties_database": {
+			"value": "az_sql_db"
+		},
+		"AzureSqlDatabase6_properties_typeProperties_userName": {
+			"value": "Yash"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

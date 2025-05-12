@@ -1,0 +1,307 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "dfyash2433mad"
+		},
+		"Advworksdb_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'Advworksdb'"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage1'"
+		},
+		"AzureBlobStorage2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage2'"
+		},
+		"AzureBlobStorage3_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage3'"
+		},
+		"AzureBlobStorage4_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AzureBlobStorage4'"
+		},
+		"AzureDataLakeStorage1_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1'"
+		},
+		"AzureSqlDatabase1_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase1'"
+		},
+		"AzureSqlDatabase2_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase2'"
+		},
+		"AzureSqlDatabase3_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase3'"
+		},
+		"AzureSqlDatabase4_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase4'"
+		},
+		"AzureSqlDatabase5_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase5'"
+		},
+		"AzureSqlDatabase6_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'AzureSqlDatabase6'"
+		},
+		"ProductBlob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ProductBlob'"
+		},
+		"Advworksdb_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "enterservername.database.windows.net"
+		},
+		"Advworksdb_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "enterdatabasename"
+		},
+		"Advworksdb_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
+		},
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdfpipeline.dfs.core.windows.net/"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "enterservername.database.windows.net"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "enterdatabasename_2025-04-28T07-07Z"
+		},
+		"AzureSqlDatabase1_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "enterdatabasename"
+		},
+		"AzureSqlDatabase2_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "taxi-data3"
+		},
+		"AzureSqlDatabase3_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "taxi-data3"
+		},
+		"AzureSqlDatabase4_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "enternewservername.database.windows.net"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "taxi-data3"
+		},
+		"AzureSqlDatabase5_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
+		},
+		"AzureSqlDatabase6_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "azzsqlserver.database.windows.net"
+		},
+		"AzureSqlDatabase6_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "az_sql_db"
+		},
+		"AzureSqlDatabase6_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "Yash"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "dfyash2433mad_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Advworksdb_password": {
+						"value": "[parameters('Advworksdb_password')]"
+					},
+					"AzureBlobStorage1_connectionString": {
+						"value": "[parameters('AzureBlobStorage1_connectionString')]"
+					},
+					"AzureBlobStorage2_connectionString": {
+						"value": "[parameters('AzureBlobStorage2_connectionString')]"
+					},
+					"AzureBlobStorage3_connectionString": {
+						"value": "[parameters('AzureBlobStorage3_connectionString')]"
+					},
+					"AzureBlobStorage4_connectionString": {
+						"value": "[parameters('AzureBlobStorage4_connectionString')]"
+					},
+					"AzureDataLakeStorage1_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
+					},
+					"AzureSqlDatabase1_password": {
+						"value": "[parameters('AzureSqlDatabase1_password')]"
+					},
+					"AzureSqlDatabase2_password": {
+						"value": "[parameters('AzureSqlDatabase2_password')]"
+					},
+					"AzureSqlDatabase3_password": {
+						"value": "[parameters('AzureSqlDatabase3_password')]"
+					},
+					"AzureSqlDatabase4_password": {
+						"value": "[parameters('AzureSqlDatabase4_password')]"
+					},
+					"AzureSqlDatabase5_password": {
+						"value": "[parameters('AzureSqlDatabase5_password')]"
+					},
+					"AzureSqlDatabase6_password": {
+						"value": "[parameters('AzureSqlDatabase6_password')]"
+					},
+					"ProductBlob_connectionString": {
+						"value": "[parameters('ProductBlob_connectionString')]"
+					},
+					"Advworksdb_properties_typeProperties_server": {
+						"value": "[parameters('Advworksdb_properties_typeProperties_server')]"
+					},
+					"Advworksdb_properties_typeProperties_database": {
+						"value": "[parameters('Advworksdb_properties_typeProperties_database')]"
+					},
+					"Advworksdb_properties_typeProperties_userName": {
+						"value": "[parameters('Advworksdb_properties_typeProperties_userName')]"
+					},
+					"AzureDataLakeStorage1_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase1_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase1_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase2_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase2_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase3_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase3_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase3_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase3_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase4_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase4_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase4_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase4_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase4_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase4_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase5_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase5_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase5_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase5_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase5_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase5_properties_typeProperties_userName')]"
+					},
+					"AzureSqlDatabase6_properties_typeProperties_server": {
+						"value": "[parameters('AzureSqlDatabase6_properties_typeProperties_server')]"
+					},
+					"AzureSqlDatabase6_properties_typeProperties_database": {
+						"value": "[parameters('AzureSqlDatabase6_properties_typeProperties_database')]"
+					},
+					"AzureSqlDatabase6_properties_typeProperties_userName": {
+						"value": "[parameters('AzureSqlDatabase6_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "dfyash2433mad_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'dfyash2433mad_ArmTemplate_0')]"
+			]
+		}
+	]
+}
